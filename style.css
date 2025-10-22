@@ -1,0 +1,195 @@
+/* Variables para Temas */
+:root {
+    --bg-color-light: #f4f7f9;
+    --text-color-light: #333;
+    --header-bg-dark: #212529;
+    --header-text-dark: #fff;
+    --card-bg-light: #fff;
+    --card-border-light: #ddd;
+    --btn-primary-bg: #007bff;
+    --btn-primary-hover: #0056b3;
+    --btn-secondary-bg: #6c757d;
+    --btn-secondary-hover: #5a6268;
+    --input-border: #ced4da;
+    --hr-color: #eee;
+}
+
+/* Tema Oscuro (Clase aplicada al body) */
+body.dark-theme {
+    --bg-color-light: #121212;
+    --text-color-light: #e0e0e0;
+    --header-bg-dark: #333;
+    --header-text-dark: #fff;
+    --card-bg-light: #1e1e1e;
+    --card-border-light: #333;
+    --btn-primary-bg: #4a90e2;
+    --btn-primary-hover: #3a7bd5;
+    --btn-secondary-bg: #999;
+    --btn-secondary-hover: #aaa;
+    --input-border: #444;
+    --hr-color: #333;
+}
+
+/* Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--hr-color);
+    margin: 20px auto;
+    width: 90%;
+}
+
+/* Header (Hero Section) */
+.hero {
+    background-color: var(--header-bg-dark);
+    color: var(--header-text-dark);
+    padding: 40px 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botones */
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: white;
+    width: 100%; /* Para el botón de Enviar */
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: white;
+    padding: 8px 15px; /* Más pequeño para el header */
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+/* Secciones generales */
+.section {
+    padding: 20px 0;
+}
+
+/* Sección Servicios (Cards) */
+.service-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en pantallas pequeñas */
+}
+
+.card {
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--card-border-light);
+    border-radius: 6px;
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 20px); /* 3 tarjetas por fila con espacio */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+}
+
+/* Sección Contacto (Formulario) */
+.contact-section {
+    padding-bottom: 40px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background-color: var(--card-bg-light); /* Para que el input siga el tema */
+    color: var(--text-color-light);
+}
+
+#form-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #d4edda;
+    color: #155724;
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--header-bg-dark);
+    color: var(--header-text-dark);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%; /* Una tarjeta por fila en móviles */
+    }
+
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
